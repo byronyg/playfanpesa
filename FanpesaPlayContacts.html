@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Contact Us | FanPesa</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    :root {
+      --match-blue-deep: #0022cc;
+      --match-blue-vivid: #0044ff;
+      --match-cyan-glow: #00e5ff;
+      --match-green-accent: #00ff87;
+      --bg-gradient: linear-gradient(135deg, #001199 0%, #0033ee 45%, #0066ff 100%);
+      --glass-card: rgba(255, 255, 255, 0.92);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --text-main: #0a0e27;
+      --text-muted: #3a4265;
+      --radius-card: 24px;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 14px 40px 14px;
+    }
+    .app-container {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 4px;
+    }
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 16px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+    .content-card {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 28px 24px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 15px 35px rgba(0, 15, 100, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--match-blue-deep);
+      margin-bottom: 4px;
+    }
+    p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .contact-info-box {
+      background: rgba(0, 68, 255, 0.05);
+      border: 1px solid rgba(0, 68, 255, 0.12);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .contact-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--match-blue-deep);
+      letter-spacing: 0.8px;
+    }
+    .contact-value {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .contact-value:hover {
+      color: var(--match-blue-vivid);
+    }
+    .footer {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-nav">
+      <a href="index.html" class="back-btn">← Back to Home</a>
+      <span style="color: var(--match-cyan-glow); font-weight: 800; font-size: 13px; text-transform: uppercase;">FanPesa Support</span>
+    </div>
+
+    <div class="content-card">
+      <h1>Contact Us</h1>
+      <p>Have questions, suggestions, or feedback for the FanPesa team? We’d love to hear from you!</p>
+
+      <div class="contact-info-box">
+        <div class="contact-row">
+          <span class="contact-label">Email Support</span>
+          <a href="mailto:support@playfanpesa.com" class="contact-value">support@playfanpesa.com</a>
+        </div>
+
+        <div class="contact-row" style="margin-top: 6px;">
+          <span class="contact-label">Community Enquiries</span>
+          <span class="contact-value" style="font-size: 14px; font-weight: 700;">Chat with us directly via our official community support links on the home page.</span>
+        </div>
+
+        <div class="contact-row" style="margin-top: 6px;">
+          <span class="contact-label">Operating Hours</span>
+          <span class="contact-value" style="font-size: 14px; font-weight: 700;">Monday – Sunday (24/7 Fan Support)</span>
+        </div>
+
+        <div class="contact-row" style="margin-top: 6px;">
+          <span class="contact-label">Location</span>
+          <span class="contact-value" style="font-size: 14px; font-weight: 700;">Nairobi, Kenya</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 FanPesa. For the Fans, Built by the Culture.</p>
+    </footer>
+  </div>
+</body>
+</html>
