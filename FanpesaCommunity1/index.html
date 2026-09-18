@@ -646,7 +646,7 @@
   </div>
 
   <!-- SCRIPT -->
-  <script>
+<script>
     const CONFIG = {
       whatsappGroupUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
       telegramUrl: "https://t.me/fanpesaOfficialchannel",
@@ -656,12 +656,13 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Load Top Logo Safely with auto lowercase fallback handler
+      // Load Top Logo Safely without aggressive hiding
       const avatarImg = document.getElementById('brandAvatar');
       if (avatarImg) {
         avatarImg.src = CONFIG.logoImage;
         avatarImg.onerror = function() {
-          // If uppercase extension fails, try lowercase version before showing the emoji fallback
+          console.warn("Logo failed to load from: " + CONFIG.logoImage);
+          // If it fails, let's try lowercase just in case the server is strict
           if (this.src.endsWith('.JPG')) {
             this.src = CONFIG.logoImage.toLowerCase();
           } else {
