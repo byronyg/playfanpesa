@@ -516,7 +516,8 @@
     <!-- TOP HEADER -->
     <header class="brand-header">
       <div class="avatar-wrapper">
-        <img id="brandAvatar" class="avatar-img" src="" alt="FanPesa Logo">
+        <!-- Hardcoded directly in HTML so it loads identically to the hero image -->
+        <img id="brandAvatar" class="avatar-img" src="img/IMG_4358.JPG" alt="FanPesa Logo" onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';">
         <div id="avatarFallback" class="avatar-fallback" style="display: none;">⚽</div>
         <div class="badge-verified">✓</div>
       </div>
@@ -651,28 +652,12 @@
       whatsappGroupUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
       telegramUrl: "https://t.me/fanpesaOfficialchannel",
       supportWaUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
-      logoImage: "img/IMG_4358.JPG",
       heroBannerImage: "img/fanpesafpl.png"
+      logoImage: "img/IMG_4358.JPG",
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Load Top Logo Safely without aggressive hiding
-      const avatarImg = document.getElementById('brandAvatar');
-      if (avatarImg) {
-        avatarImg.src = CONFIG.logoImage;
-        avatarImg.onerror = function() {
-          console.warn("Logo failed to load from: " + CONFIG.logoImage);
-          // If it fails, let's try lowercase just in case the server is strict
-          if (this.src.endsWith('.JPG')) {
-            this.src = CONFIG.logoImage.toLowerCase();
-          } else {
-            this.style.display = 'none';
-            const fallback = document.getElementById('avatarFallback');
-            if (fallback) fallback.style.display = 'flex';
-          }
-        };
-      }
-
+      // Load Hero Banner
       const heroImg = document.getElementById('heroBannerImg');
       if (heroImg) {
         heroImg.src = CONFIG.heroBannerImage;
