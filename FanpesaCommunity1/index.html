@@ -461,7 +461,7 @@
         </div>
         <div class="reward-item">
           <span class="reward-icon">🎉</span>
-          <span> Local Tactical Analysis</span>
+          <span> Fantasy Premier League Challenges</span>
         </div>
         <div class="reward-item">
           <span class="reward-icon">🔥</span>
@@ -563,11 +563,16 @@
       whatsappGroupUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
       telegramUrl: "https://t.me/fanpesaOfficialchannel",
       supportWaUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
+      logoImage: "img/IMG_4358.JPG",
       heroBannerImage: "img/fanpesafpl.png"
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Load Hero Banner
+      // Load Logo & Hero Banner
+
+      const avatarImg = document.getElementById('brandAvatar');
+      if (avatarImg) avatarImg.src = CONFIG.logoImage;
+      
       const heroImg = document.getElementById('heroBannerImg');
       if (heroImg) {
         heroImg.src = CONFIG.heroBannerImage;
