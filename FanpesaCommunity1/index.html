@@ -516,13 +516,13 @@
     <!-- TOP HEADER -->
     <header class="brand-header">
       <div class="avatar-wrapper">
-        <img id="brandAvatar" class="avatar-img" src="" alt="FanPesa Logo" onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';">
+        <img id="brandAvatar" class="avatar-img" src="" alt="FanPesa Logo">
         <div id="avatarFallback" class="avatar-fallback" style="display: none;">⚽</div>
         <div class="badge-verified">✓</div>
       </div>
       
       <h1 class="hero-eyebrow">
-        Test JOIN KENYA'S TOP
+        JOIN KENYA'S TOP
         <span class="hero-eyebrow-accent">SPORTS FAN COMMUNITY</span>
       </h1>
       <span class="brand-subtag"> </span>
@@ -535,7 +535,7 @@
 
     <!-- HERO CARD -->
     <div class="hero-card">
-      <img id="heroBannerImg" class="hero-banner-img" src="" alt="FanPesa FPL Rewards" onerror="this.style.display='none';">
+      <img id="heroBannerImg" class="hero-banner-img" src="" alt="FanPesa FPL Rewards">
       <div class="hero-header-badge">🔥 Daily Match Tactics & Banter</div>
       <h2 class="hero-title">Join Kenya's Top Sports Community!</h2>
       <p class="hero-desc">Connect with thousands of passionate Kenyan fans for daily sports banter, tactical breakdowns, and community events.</p>
@@ -645,25 +645,37 @@
 
   </div>
 
-  <!-- FIXED CONFIGURATION & INITIALIZATION SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     const CONFIG = {
       whatsappGroupUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
       telegramUrl: "https://t.me/fanpesaOfficialchannel",
       supportWaUrl: "https://chat.whatsapp.com/ClI6gLpRccYHEvrxJMXarQ?s=hd&p=i&mlu=4&ilr=4",
-      logoImage: "img/IMG_4358.JPG",        // Configured correctly now
-      heroBannerImage: "img/fanpesafpl.png" // Configured correctly now
+      logoImage: "img/IMG_4358.JPG",
+      heroBannerImage: "img/fanpesafpl.png"
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Safely set image sources from CONFIG object
+      // Load Images Safely
       const avatarImg = document.getElementById('brandAvatar');
-      if (avatarImg) avatarImg.src = CONFIG.logoImage;
+      if (avatarImg) {
+        avatarImg.src = CONFIG.logoImage;
+        avatarImg.onerror = function() {
+          this.style.display = 'none';
+          const fallback = document.getElementById('avatarFallback');
+          if (fallback) fallback.style.display = 'flex';
+        };
+      }
 
       const heroImg = document.getElementById('heroBannerImg');
-      if (heroImg) heroImg.src = CONFIG.heroBannerImage;
+      if (heroImg) {
+        heroImg.src = CONFIG.heroBannerImage;
+        heroImg.onerror = function() {
+          this.style.display = 'none';
+        };
+      }
 
-      // Bind all dynamic community and action links
+      // Bind Link URLs
       document.getElementById('btnStep1Wa').href = CONFIG.whatsappGroupUrl;
       document.getElementById('linkMainWa').href = CONFIG.whatsappGroupUrl;
       document.getElementById('linkMerch').href = CONFIG.whatsappGroupUrl;
